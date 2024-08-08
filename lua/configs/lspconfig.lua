@@ -17,6 +17,8 @@ local servers = {
     },
   },
 
+  wgsl_analyzer = {},
+
   asm_lsp = {
     settings = {
       single_file_support = true,
