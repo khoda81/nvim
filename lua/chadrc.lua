@@ -1,6 +1,6 @@
 -- neovide settings
 if vim.g.neovide then
-  vim.o.guifont = "FiraCode Nerd Font:h10"
+  vim.o.guifont = "FiraCode Nerd Font:h9"
   vim.o.winblend = 30
 
   -- vim.g.neovide_transparency = 1.0
@@ -66,37 +66,39 @@ vim.opt.spell = false
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
-  nvdash = {
-    load_on_startup = true,
+M.
+nvdash = {
+  load_on_startup = true,
 
-    header = {
-      "      ____________       ",
-      "     ╱╲  ________ ╲      ",
-      "    ╱  ╲ ╲______╱╲ ╲     ",
-      "   ╱ ╱╲ ╲ ╲  ╱ ╱╲ ╲ ╲    ",
-      "  ╱ ╱ ╱╲ ╲ ╲╱ ╱ ╱╲ ╲ ╲   ",
-      " ╱ ╱ ╱__╲_╲╱ ╱ ╱__╲_╲ ╲  ",
-      "╱ ╱ ╱_______╱ ╱________╲ ",
-      "╲ ╲ ╲______ ╲ ╲______  ╱ ",
-      " ╲ ╲ ╲  ╱ ╱╲ ╲ ╲  ╱ ╱ ╱  ",
-      "  ╲ ╲ ╲╱ ╱ ╱╲ ╲ ╲╱ ╱ ╱   ",
-      "   ╲ ╲╱ ╱ ╱__╲_╲╱ ╱ ╱    ",
-      "    ╲  ╱ ╱______╲╱ ╱     ",
-      "     ╲╱___________╱      ",
-    },
+  header = {
+    "      ____________       ",
+    "     ╱╲  ________ ╲      ",
+    "    ╱  ╲ ╲______╱╲ ╲     ",
+    "   ╱ ╱╲ ╲ ╲  ╱ ╱╲ ╲ ╲    ",
+    "  ╱ ╱ ╱╲ ╲ ╲╱ ╱ ╱╲ ╲ ╲   ",
+    " ╱ ╱ ╱__╲_╲╱ ╱ ╱__╲_╲ ╲  ",
+    "╱ ╱ ╱_______╱ ╱________╲ ",
+    "╲ ╲ ╲______ ╲ ╲______  ╱ ",
+    " ╲ ╲ ╲  ╱ ╱╲ ╲ ╲  ╱ ╱ ╱  ",
+    "  ╲ ╲ ╲╱ ╱ ╱╲ ╲ ╲╱ ╱ ╱   ",
+    "   ╲ ╲╱ ╱ ╱__╲_╲╱ ╱ ╱    ",
+    "    ╲  ╱ ╱______╲╱ ╱     ",
+    "     ╲╱___________╱      ",
+    "                         ",
+    "                         ",
+  },
 
-    buttons = {
-      { "  Sessions", "Spc c s", "Telescope session-lens" },
-      { "  Find File", "Spc f f", "Telescope find_files" },
-      { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
-      { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
-      { "  Bookmarks", "Spc m a", "Telescope marks" },
-      { "  Themes", "Spc t h", "Telescope themes" },
-      { "  Mappings", "Spc c h", "NvCheatsheet" },
-    },
-  }
+  buttons = {
+    { txt = "  Sessions", keys = "Spc c s", cmd = "Telescope session-lens" },
+    { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
+    { txt = "󰈚  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
+    { txt = "󰈭  Find Word", keys = "Spc f w", cmd = "Telescope live_grep" },
+    { txt = "  Bookmarks", keys = "Spc m a", cmd = "Telescope marks" },
+    { txt = "  Themes", keys = "Spc t h", cmd = "Telescope themes" },
+    { txt = "  Mappings", keys = "Spc c h", cmd = "NvCheatsheet" },
+  },
 }
+
 
 M.base46 = {
   theme = "onedark",
@@ -141,7 +143,7 @@ vim.api.nvim_set_hl(0, "@lsp.type.derive", { bold = true, fg = "#ff9900" })
 vim.api.nvim_set_hl(0, "@lsp.type.function", { bold = true, fg = "#ffd173" })
 vim.api.nvim_set_hl(0, "@lsp.type.method", { bold = true, italic = true, fg = "#ffd173" })
 
-vim.api.nvim_set_hl(0, "@lsp.type.enumMember", { bold = true, italic = true, fg = "#ff7391" })
+-- vim.api.nvim_set_hl(0, "@lsp.type.enumMember", { bold = true, fg = "#ff7391" })
 vim.api.nvim_set_hl(0, "@lsp.type.interface", { bold = true, fg = "#eb3f8f" })
 vim.api.nvim_set_hl(0, "@lsp.type.namespace", { bold = true, fg = "#ff73ea" })
 
@@ -159,14 +161,14 @@ vim.api.nvim_set_hl(0, "@lsp.type.variable", { bold = true, fg = "#53de8d" })
 -- Highlight groups for types
 
 vim.api.nvim_set_hl(0, "@lsp.type.typeAlias", { link = "@lsp.type.class" })
-vim.api.nvim_set_hl(0, "@lsp.type.class", { bold = true, fg = "#73d0ff" })
-vim.api.nvim_set_hl(0, "@lsp.type.class", { bold = true, fg = "#73d0ff" })
-vim.api.nvim_set_hl(0, "@lsp.type.enum", { bold = true, fg = "#f3d0ff" })
-vim.api.nvim_set_hl(0, "@lsp.type.union", { bold = true, fg = "#a3f0ff" })
 vim.api.nvim_set_hl(0, "@lsp.type.primitive", { link = "@lsp.type.class" })
 vim.api.nvim_set_hl(0, "@lsp.type.builtinType", { link = "@lsp.type.class" })
 vim.api.nvim_set_hl(0, "@lsp.type.struct", { link = "@lsp.type.class" })
 vim.api.nvim_set_hl(0, "@lsp.type.type", { link = "@lsp.type.class" })
+vim.api.nvim_set_hl(0, "@lsp.type.class", { bold = true, fg = "#73d0ff" })
+vim.api.nvim_set_hl(0, "@lsp.type.enumMember", { bold = true, fg = "#f990ef" })
+vim.api.nvim_set_hl(0, "@lsp.type.enum", { bold = true, fg = "#f3d0ff" })
+vim.api.nvim_set_hl(0, "@lsp.type.union", { bold = true, fg = "#a3f0ff" })
 
 vim.api.nvim_set_hl(0, "@lsp.type.typeParameter", { bold = true, italic = true, fg = "#73ffde" })
 

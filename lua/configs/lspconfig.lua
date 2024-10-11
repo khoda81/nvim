@@ -38,7 +38,11 @@ local servers = {
     },
   },
 
-  tsserver = {
+  ts_ls = {
+    settings = {},
+  },
+
+  protols = {
     settings = {},
   },
 
