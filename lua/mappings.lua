@@ -20,6 +20,13 @@ map("n", "<leader>ss", "<cmd>SessionSave<cr>", { desc = "Session save" })
 -- map("n", "<S-tab>", function() require("nvchad.tabufline").prev() end, { desc = "Buffer Goto prev" })
 map("n", "<C-tab>", "<cmd>bprev<cr>", { desc = "Buffer Goto prev active" })
 map("n", "<C-S-tab>", "<cmd>bnext<cr>", { desc = "Buffer Goto next active" })
+map("n", "<C-t>", function() require("menu").open("default") end, {})
+map("n", "<RightMouse>", function()
+  vim.cmd.exec '"normal! \\<RightMouse>"'
+
+  local options = vim.bo.ft == "NvimTree" and "nvimtree" or "default"
+  require("menu").open(options, { mouse = true })
+end, {})
 
 ------------- CompetiTest -------------
 map("n", "<leader>cpu", "<CMD>CompetiTest show_ui<CR>", { desc = "CompetiTest show ui" })

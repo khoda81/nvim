@@ -91,7 +91,7 @@ end
 
 for lsp, config in pairs(servers) do
   lspconfig[lsp].setup(vim.tbl_deep_extend("force", {
-    on_attach = configs.on_attach,
+    -- on_attach = configs.on_attach,
     capabilities = configs.capabilities,
   }, config))
 end

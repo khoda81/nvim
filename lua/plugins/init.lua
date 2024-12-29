@@ -1,4 +1,8 @@
 return {
+  -- {
+  --   "nvzone/minty",
+  --   cmd = { "Shades", "Huefy" },
+  -- },
   {
     "folke/which-key.nvim",
     keys = {
